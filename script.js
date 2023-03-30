@@ -13,6 +13,7 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
+var newpass;
 const Listofoptions = [];
 var Upper = Lower = Numbers = Special = "no";
 const Capital = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
@@ -69,9 +70,13 @@ function generatePassword(){
   }
   for (var i =0 ; i < Passlength; i++){
     const random = Math.floor(Math.random() * Listofoptions.length);
-    console.log(random, Listofoptions[random]);
+    // console.log(random, Listofoptions[random]);
+    // console.log(Listofoptions[random]);
+    newpass= newpass+ Listofoptions[random]
+    // console.log(newpass)
+
   }
-    
+    console.log(newpass)
 }
 // function genpass(){
 //   if (Upper = "yes"){
