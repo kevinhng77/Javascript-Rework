@@ -37,7 +37,6 @@ function generatePassword(){
   if (confirm('Do you want upper case letters?')) {
     Upper = "yes"
   }
-  
   if (confirm("Do you want lower case letters?")) {
     Lower = "yes"
   }
@@ -48,20 +47,23 @@ function generatePassword(){
     Special = "yes"
   }
   question4();
-
-  if (Upper = "yes"){
+  console.log(Upper)
+  if (Upper == "yes"){
     Listofoptions.push(...Capital);
     console.log(Listofoptions);
   }
-  if (Lower = "yes"){
+  else {
+
+  }
+  if (Lower == "yes"){
     Listofoptions.push(...notCapital);
     console.log(Listofoptions);
   }
-  if (Numbers = "yes"){
+  if (Numbers == "yes"){
     Listofoptions.push(...numeric);
     console.log(Listofoptions);
   }
-  if (Special = "yes"){
+  if (Special == "yes"){
     Listofoptions.push(...specialchar);
     console.log(Listofoptions);
   }
