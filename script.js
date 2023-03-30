@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+let Passlength;
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -15,7 +15,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 var Upper = Lower = Numbers = Special = "no";
-function questions(){
+function generatePassword(){
   if (confirm('Do you want upper case letters?')) {
     Upper = "yes"
   }
@@ -29,6 +29,7 @@ function questions(){
   if (confirm("Do you want special characters?")) {
     Special = "yes"
   }
+  question4();
 }
 
 var emptyPass= '';
@@ -40,37 +41,39 @@ const specialchar = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "
 
 function genpass(){
   if (Upper = "yes"){
-    Listofoptions.push(Capital);
+    Listofoptions.concat(Capital);
     console.log(Listofoptions);
   }
   if (Lower = "yes"){
-    Listofoptions.push(notCapital);
+    Listofoptions.concat(notCapital);
     console.log(Listofoptions);
   }
   if (Numbers = "yes"){
-    Listofoptions.push(numeric);
+    Listofoptions.concat(numeric);
     console.log(Listofoptions);
   }
   if (Special = "yes"){
-    Listofoptions.push(specialchar);
+    Listofoptions.concat(specialchar);
     console.log(Listofoptions);
   }
-  for i in passLength:
-    // select random from array and append to emptyPass
+  for (var i =0 ; i < Passlength; i++){
+    const random = Math.floor(Math.random() * Listofoptions.length);
+    console.log(random, Listofoptions[random]);
+  }
+    
 
 }
 
-questions();
 
-// function question4() {
-//   let Passlength = window.prompt("what is the length of the password you want? Please input number between 8 and 128");
-//   if (PassLength >= 8 && Passlength <= 128) {
-//     console.log(Passlength);
-//   }
-//   else {
-//     alert("Please input number between 8 and 128")
-//     question4();
-//   }
-// }
+function question4() {
+  Passlength = window.prompt("what is the length of the password you want? Please input number between 8 and 128");
+  Passlength= parseInt(Passlength);
+  if (Passlength >= 8 && Passlength <= 128) {
+    return;
+  }
+  else {
+    alert("Please input number between 8 and 128")
+    question4();
+  }
+}
 
-// question4();
