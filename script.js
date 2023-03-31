@@ -6,20 +6,20 @@ function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = newpass;
 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-var newpass;
+var newpass= '';
 const Listofoptions = [];
 var Upper = Lower = Numbers = Special = "no";
 const Capital = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
 const notCapital = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 const numeric = [0,1,2,3,4,5,6,7,8,9];
-const specialchar = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":","\"","\\"];
+const specialChar = [ "+", "-", "&&", "||", "!", "(", ")", "{", "}", "[", "]", "^", "~", "*", "?", ":","\"","\\"];
 
 function question4() {
   Passlength = window.prompt("what is the length of the password you want? Please input number between 8 and 128");
@@ -65,14 +65,14 @@ function generatePassword(){
     console.log(Listofoptions);
   }
   if (Special == "yes"){
-    Listofoptions.push(...specialchar);
+    Listofoptions.push(...specialChar);
     console.log(Listofoptions);
   }
   for (var i =0 ; i < Passlength; i++){
     const random = Math.floor(Math.random() * Listofoptions.length);
     // console.log(random, Listofoptions[random]);
     // console.log(Listofoptions[random]);
-    newpass= newpass+ Listofoptions[random]
+    newpass += Listofoptions[random]
     // console.log(newpass)
 
   }
